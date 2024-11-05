@@ -1,5 +1,4 @@
 import { defineConfig } from "@solidjs/start/config";
-import { postcss } from "tailwindcss";
 
 export default defineConfig({
   vite: {
@@ -9,9 +8,8 @@ export default defineConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@import "./src/app.css";`,
+          // additionalData: `@import "./src/app.css";`,
         },
-        postcss: undefined,
       },
     },
   },

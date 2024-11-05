@@ -33,13 +33,11 @@ export default function Todo() {
     setStore("nextId", (nextId) => nextId + 1);
   }
 
-  const input = (
-    <input class="border-2 my-4 border-gray-300 rounded-md p-2 text-gray-800" />
-  );
+  const input = <input />;
 
   return (
-    <main class="text-center mx-auto my-16">
-      <h1 class="text-2xl font-bold">Todos</h1>
+    <main>
+      <h1>Todos</h1>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -50,12 +48,7 @@ export default function Todo() {
         }}
       >
         {input}
-        <button
-          type="submit"
-          class="bg-slate-800 border-2 text-white p-2 rounded-md"
-        >
-          Add
-        </button>
+        <button type="submit">Add</button>
       </form>
       <For each={store.todos}>
         {(todo) => (
