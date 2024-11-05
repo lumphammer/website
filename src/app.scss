@@ -1,1 +1,18 @@
 @use "@picocss/pico";
+@use "@picocss/pico/scss/colors" as *;
+
+/* Orange color for dark color scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    $foo: #f56b3d;
+    --pico-text-selection-color: #{$red-750};
+    --pico-primary: #{$foo};
+    --pico-primary-background: #{$foo};
+    --pico-primary-underline: #{$red-450};
+    --pico-primary-hover: #{$red-550};
+    --pico-primary-hover-background: #{$red-650};
+    --pico-primary-focus: rgba(245, 107, 61, 0.375);
+    --pico-primary-inverse: #fff;
+  }
+}
