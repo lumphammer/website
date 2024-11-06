@@ -11,6 +11,10 @@ export default function App() {
         <>
           <Nav />
           <Suspense>{props.children}</Suspense>
+          <footer>
+            <hr />
+            <small>Copyright 2024 Neil de Carteret</small>
+          </footer>
         </>
       )}
     >

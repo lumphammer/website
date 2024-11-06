@@ -1,4 +1,5 @@
 import { useLocation } from "@solidjs/router";
+import { createEffect } from "solid-js";
 
 type LinkProps = {
   to: string;
@@ -7,24 +8,25 @@ type LinkProps = {
 
 function Link({ to, children }: LinkProps) {
   const location = useLocation();
-  const active = (path: string) =>
-    path == location.pathname
-      ? "border-sky-600"
-      : "border-transparent hover:border-sky-600";
+
   return (
-    <li class={`border-b-2 ${active(to)} mx-1.5 sm:mx-6`}>
-      <a href={to}>{children}</a>
+    <li>
+      <a href={to} aria-current={to === location.pathname ? "page" : undefined}>
+        {children}
+      </a>
     </li>
   );
 }
 
 export default function Nav() {
   return (
-    <nav class="bg-sky-800">
-      <ul class="container flex items-center p-3 text-gray-200">
+    <nav>
+      <ul>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/todo">Todo</Link>
+        <Link to="/portfolio">Portfolio</Link>
+        <Link to="/contact">Contact</Link>
       </ul>
     </nav>
   );
