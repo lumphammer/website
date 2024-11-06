@@ -1,4 +1,5 @@
 import { defineConfig } from "@solidjs/start/config";
+import devtoolsPlugin from "solid-devtools/vite";
 
 export default defineConfig({
   vite: {
@@ -11,6 +12,12 @@ export default defineConfig({
           // additionalData: `@import "./src/app.css";`,
         },
       },
+    },
+    plugins: [devtoolsPlugin() as any],
+  },
+  server: {
+    prerender: {
+      crawlLinks: true,
     },
   },
 });
