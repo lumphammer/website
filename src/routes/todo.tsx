@@ -36,7 +36,7 @@ export default function Todo() {
   const input = <input />;
 
   return (
-    <main>
+    <main class="container">
       <h1>Todos</h1>
       <form
         onSubmit={(e) => {

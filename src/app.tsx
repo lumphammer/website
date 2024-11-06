@@ -9,11 +9,20 @@ export default function App() {
     <Router
       root={(props) => (
         <>
-          <Nav />
+          <header>
+            <div class="container">
+              <div>Lumphammer</div>
+              <Nav />
+            </div>
+          </header>
           <Suspense>{props.children}</Suspense>
           <footer>
-            <hr />
-            <small>Copyright 2024 Neil de Carteret</small>
+            <div class="container">
+              <hr />
+              <small>Copyright 2024 Neil de Carteret</small>
+              {" / "}
+              <small>Rendered at {new Date().toISOString()}</small>
+            </div>
           </footer>
         </>
       )}
