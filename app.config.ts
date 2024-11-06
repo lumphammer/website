@@ -6,13 +6,6 @@ export default defineConfig({
     server: {
       open: true,
     },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          // additionalData: `@import "./src/app.css";`,
-        },
-      },
-    },
     plugins: [devtoolsPlugin() as any],
   },
   server: {
